@@ -26,3 +26,4 @@ def chat_api(question_req: QuestionRequest):
     # response_from_ai = openai_client.get_ai_response(
     #     query)  # Call the OpenAI API for additional response
     return {"response": response.response}
+ 
