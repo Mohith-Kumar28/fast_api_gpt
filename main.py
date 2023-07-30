@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from llama_index import GPTSimpleVectorIndex
+from llama_index import VectorStoreIndex
 from langchain import OpenAI
 from pydantic import BaseModel
 from decouple import config
@@ -12,7 +12,7 @@ OPENAI_API_KEY = config('OPENAI_API_KEY')
 os.environ["OPENAI_API_KEY"] = OPENAI_API_KEY
 
 # Load the index only once, outside the view, for better performance
-index = GPTSimpleVectorIndex.load_from_disk('index.json')
+index = VectorStoreIndex.load_from_disk('index.json')
 
 
 class QuestionRequest(BaseModel):
