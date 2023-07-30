@@ -1,4 +1,6 @@
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+
 from llama_index import GPTSimpleVectorIndex
 from langchain import OpenAI
 from pydantic import BaseModel
@@ -6,6 +8,19 @@ from decouple import config
 import os
 
 app = FastAPI()
+
+
+## Set allowed origins
+origins = [config('ALLOWED_ORIGINS')]
+
+# Add CORS middleware
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # Load OpenAI API key from the environment variable
 OPENAI_API_KEY = config('OPENAI_API_KEY')
