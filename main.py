@@ -72,7 +72,7 @@ input_string = config('ALLOWED_ORIGINS')
 # print(output_array)
 # output_array=input_string.split(',')
 
-output_array=['http://localhost:3000','https://my-portfolio-two-gamma-53.vercel.app','https://www.mohith.in/']
+output_array=['http://localhost:3000','https://my-portfolio-two-gamma-53.vercel.app','https://www.mohith.in']
 
 print(output_array)  # Output: item1,item2
 
