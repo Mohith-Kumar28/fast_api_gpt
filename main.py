@@ -63,6 +63,7 @@ from llama_index import GPTSimpleVectorIndex,ServiceContext,LLMPredictor,PromptH
 from langchain import OpenAI
 from pydantic import BaseModel
 from decouple import config
+import re
 import os
 
 app = FastAPI()
