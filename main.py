@@ -75,7 +75,11 @@ input_string = config('ALLOWED_ORIGINS')
 # print(output_array)  # Output: item1,item2
 
 
-origins = [input_string]
+origins = []
+origins.append(config('ALLOWED_ORIGIN_FRONTEND'))
+origins.append(config('ALLOWED_ORIGIN_BACKEND'))
+
+print(origins)
 
 # Add CORS middleware
 app.add_middleware(
