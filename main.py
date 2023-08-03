@@ -68,7 +68,7 @@ import os
 app = FastAPI()
 ## Set allowed origins
 input_string = config('ALLOWED_ORIGINS')
-output_string = input_string.replace("'", '')
+output_string = input_string.replace('"', '')
 
 print(output_string)  # Output: item1,item2
 
