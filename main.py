@@ -68,8 +68,8 @@ import os
 app = FastAPI()
 ## Set allowed origins
 input_string = config('ALLOWED_ORIGINS')
-print(config('ALLOWED_ORIGINS'))
-output_array = input_string
+output_array = [config('ALLOWED_ORIGIN_FRONTEND'),config('ALLOWED_ORIGIN_BACKEND')]
+print(output_array))
 
 
 print(output_array)  # Output: item1,item2
