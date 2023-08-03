@@ -70,7 +70,9 @@ app = FastAPI()
 input_string = config('ALLOWED_ORIGINS')
 # output_array = [config('ALLOWED_ORIGIN_FRONTEND'),config('ALLOWED_ORIGIN_BACKEND')]
 # print(output_array)
-output_array=input_string.split(',')
+# output_array=input_string.split(',')
+
+output_array=['http://localhost:3000','https://my-portfolio-two-gamma-53.vercel.app']
 
 print(output_array)  # Output: item1,item2
 
