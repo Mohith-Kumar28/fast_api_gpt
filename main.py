@@ -76,8 +76,8 @@ input_string = config('ALLOWED_ORIGINS')
 
 
 origins = []
-print(config('ALLOWED_ORIGIN_FRONTEND'))
-print(config('ALLOWED_ORIGIN_BACKEND'))
+print(config('ALLOWED_ORIGIN_FRONTEND').rstrip(';'))
+print(config('ALLOWED_ORIGIN_BACKEND').rstrip(';'))
 origins.append(config('ALLOWED_ORIGIN_FRONTEND'))
 origins.append(config('ALLOWED_ORIGIN_BACKEND'))
 
