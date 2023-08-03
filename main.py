@@ -78,8 +78,8 @@ input_string = config('ALLOWED_ORIGINS')
 origins = []
 print(config('ALLOWED_ORIGIN_FRONTEND'))
 print(config('ALLOWED_ORIGIN_BACKEND'))
-origins.append(config('ALLOWED_ORIGIN_FRONTEND').rstrip(';'))
-origins.append(config('ALLOWED_ORIGIN_BACKEND').rstrip(';'))
+origins.append(str(config('ALLOWED_ORIGIN_FRONTEND')))
+origins.append(str(config('ALLOWED_ORIGIN_BACKEND')))
 
 print(origins)
 
