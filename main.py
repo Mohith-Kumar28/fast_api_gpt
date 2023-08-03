@@ -69,7 +69,8 @@ app = FastAPI()
 ## Set allowed origins
 input_string = config('ALLOWED_ORIGINS')
 print(config('ALLOWED_ORIGINS'))
-output_array = [item.strip("'; ") for item in input_string.split(',')]
+cleaned_string = re.sub(r"[^a-zA-Z0-9:/.-]", "", input_string)
+output_array = [item.strip() for item in cleaned_string.split(',')]
 
 
 print(output_array)  # Output: item1,item2
