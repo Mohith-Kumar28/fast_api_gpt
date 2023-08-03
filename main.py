@@ -67,7 +67,13 @@ import os
 
 app = FastAPI()
 ## Set allowed origins
-origins = [config('ALLOWED_ORIGINS')]
+input_string = config('ALLOWED_ORIGINS')
+output_string = input_string.replace("'", '')
+
+print(output_string)  # Output: item1,item2
+
+
+origins = [output_string]
 
 # Add CORS middleware
 app.add_middleware(
