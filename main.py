@@ -63,15 +63,13 @@ from llama_index import GPTSimpleVectorIndex,ServiceContext,LLMPredictor,PromptH
 from langchain import OpenAI
 from pydantic import BaseModel
 from decouple import config
-import re
 import os
 
 app = FastAPI()
 ## Set allowed origins
 input_string = config('ALLOWED_ORIGINS')
 print(config('ALLOWED_ORIGINS'))
-cleaned_string = re.sub(r"[^a-zA-Z0-9:/.-]", "", input_string)
-output_array = [item.strip() for item in cleaned_string.split(',')]
+output_array = input_string.split(' ')
 
 
 print(output_array)  # Output: item1,item2
