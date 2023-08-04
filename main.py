@@ -128,7 +128,7 @@ class QuestionRequest(BaseModel):
 @app.post("/chat/")
 def chat_api(question_req: QuestionRequest):
     query = question_req.question
-    response = index.query('Answer like you are the person answering the asked question and be concise unless you are asked to explain in detail,       question:'+query)
+    response = index.query('Answer like you are the person answering the asked question ,       question:'+query)
     # response_from_ai = openai_client.get_ai_response(
     #     query)  # Call the OpenAI API for additional response
     return {"response": response.response}
